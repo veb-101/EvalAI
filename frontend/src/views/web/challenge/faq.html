@@ -1,0 +1,153 @@
+<section class="ev-sm-container ev-view">
+  <div class="ev-md-container ev-card-panel ev-z-depth-5 ev-challenge-view">
+    <div class="row margin-bottom-cancel">
+      <div class="col s12 m12 l12">
+        <h5 class="w-300">Frequently Asked Questions (FAQ)</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <div class="fs-16 w-300 terms-and-conditions trix-container">
+
+          <!-- FAQ #1 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: Can I register my team during the challenge?</strong></p>
+            <p class="faq-answer">
+              A: Yes, team registration remains open until the challenge’s conclusion. However, please be sure to review
+              the constraints on teams planning to submit a one-shot solution, as detailed below.
+            </p>
+          </div>
+
+          <!-- FAQ #2 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: Are the exact formulas for MSSD and mAP publicly available?</strong></p>
+            <p class="faq-answer">
+              A: We utilize the robot consistency described in this paper:
+              <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Kalra_Towards_Co-Evaluation_of_Cameras_HDR_and_Algorithms_for_Industrial-Grade_6DoF_CVPR_2024_paper.pdf"
+                target="_blank">
+                https://openaccess.thecvf.com/content/CVPR2024/papers/Kalra_Towards_Co-Evaluation_of_Cameras_HDR_and_Algorithms_for_Industrial-Grade_6DoF_CVPR_2024_paper.pdf
+              </a>
+            </p>
+            <ul>
+              <li>
+                <strong>MSSD (Maximum Symmetry-Aware Surface Distance):</strong> This metric represents the maximum
+                distance between a point on the object's surface in your detected pose and the corresponding point on
+                the “ground truth” (GT) pose. It’s a stringent metric emphasizing the “worst-case scenario” error. The
+                “Symmetry-Aware” component accounts for object symmetries.
+                You can read more about MSSD here:
+                <a href="https://arxiv.org/pdf/2009.07378" target="_blank">
+                  https://arxiv.org/pdf/2009.07378
+                </a>.
+              </li>
+              <li>
+                <strong>mAP (mean Average Precision):</strong> mAP is calculated across a range of MSSD thresholds (2mm
+                to 20mm, in 2mm increments) for recall. Detections with MSSD below a given threshold are considered
+                successful. The final mAP score is the average across all thresholds. Therefore, higher recall,
+                precision, and pose accuracy contribute to a better mAP score. You can read more about mAP here:
+                <a
+                  href="https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173"
+                  target="_blank">
+                  https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173
+                </a>.
+              </li>
+            </ul>
+          </div>
+
+          <!-- FAQ #3 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: Is there a time or computational cost penalty for this live robotics/bin picking event?</strong></p>
+            <p class="faq-answer">
+              A: Yes. Solutions must execute on a machine with 16GB RAM, an NVIDIA L4-class GPU with 24GB GPU RAM, and
+              complete the evaluation of the 1,232-scene final dataset within 12 hours.
+            </p>
+          </div>
+
+          <!-- FAQ #4 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: Will Phase 2 feature different CAD models?</strong></p>
+            <p class="faq-answer">A: Yes.</p>
+          </div>
+
+          <!-- FAQ #5 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: Will the Phase 2 CAD models be sourced from the IPD dataset?</strong></p>
+            <p class="faq-answer">
+              A: No. The Phase 2 CAD models and the test dataset are proprietary and not publicly available.
+            </p>
+          </div>
+
+          <!-- FAQ #6 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: When will Phase 2 CAD models and training data be released?</strong></p>
+            <p class="faq-answer">
+              A: Phase 2 is expected to be released in April. No accompanying test data will be released.
+            </p>
+          </div>
+
+          <!-- FAQ #7 -->
+          <div class="faq-item">
+            <p class="faq-question">
+              <strong>
+                Q: What qualifies as a "one-shot" solution? Specifically, can the 6D pose estimation process be trained on the Phase 2 training set for a one-shot submission?
+              </strong>
+            </p>
+            <p class="faq-answer">
+              A: A “one-shot” solution requires a single, unified approach for all parts, without pre-training on the
+              Phase 2 dataset. This allows for multi-stage pipelines (e.g., separate detection and pose regression
+              models), but these must be consistent across all test parts and not pre-trained on them. To ensure
+              fairness, training on Phase 2 parts will be prohibited once they are released. We will verify the use of
+              the same models across Phase 1 and Phase 2 by checking model weights and Docker image checksums.
+            </p>
+          </div>
+
+          <!-- FAQ #8 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: Is it obligatory to submit solutions to Phase 1 if only Phase 2 will be used for rankings?</strong></p>
+            <p class="faq-answer">A: Yes.</p>
+          </div>
+
+          <!-- FAQ #9 -->
+          <div class="faq-item">
+            <p class="faq-question">
+              <strong>
+                Q: Are we allowed to create a pipeline using existing state-of-the-art detectors and pose estimators and submit it as an innovation?
+              </strong>
+              <br>
+              <strong>
+                Or will evaluation focus on novelty and model architectures?
+              </strong>
+            </p>
+            <p class="faq-answer">
+              A: You are encouraged to leverage any open-source code and models. Utilizing pre-trained models and
+              existing 6DoF pose estimation solutions is acceptable and encouraged to improve performance. The
+              evaluation is focused on the performance of the system, not strictly on the novelty of the architecture.
+            </p>
+          </div>
+
+          <!-- FAQ #10 -->
+          <div class="faq-item">
+            <p class="faq-question"><strong>Q: How can I submit a solution?</strong></p>
+            <p class="faq-answer">
+              A: To submit your solution, please follow these steps:
+            </p>
+            <ol>
+              <li>
+                <strong>Prepare your submission:</strong> Use the instructions provided in the GitHub repository:
+                <a href="https://github.com/opencv/bpc" target="_blank">https://github.com/opencv/bpc</a>.
+              </li>
+              <li>
+                <strong>Submit your prepared solution:</strong> Use the submission portal and instructions found here:
+                <a
+                  href="https://bpc.opencv.org/web/challenges/challenge-page/1/submission"
+                  target="_blank">
+                  https://bpc.opencv.org/web/challenges/challenge-page/1/submission
+                </a>.
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
