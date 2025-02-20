@@ -1,14 +1,15 @@
 .challenge-title-container {
     padding-bottom: 0px;
+
     ul.inline-list {
-      margin: 0px;
-      white-space: nowrap; // Prevent wrapping
-      overflow-x: auto;    // Add horizontal scroll if needed
-  
-      li {
-        margin-right: 40px;
-        min-height: 40px;
-      }
+        margin: 0px;
+        white-space: nowrap; // Prevent wrapping
+        //   overflow-x: auto;    // Add horizontal scroll if needed
+
+        li {
+            margin-right: 40px;
+            min-height: 40px;
+        }
     }
 }
 
