@@ -1,6 +1,20 @@
 <p align="center"><img width="65%" src="docs/source/_static/img/evalai_logo.png"/></p>
 
 ------------------------------------------------------------------------------------------
+* OpenCV Competition backend system structure: **Perception Challenge for Bin-picking**
+
+<img src="https://raw.githubusercontent.com/veb-101/EvalAI/refs/heads/aws-changes/Evalai-process-2.png">
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------
+
 
 [![Join the chat at https://gitter.im/Cloud-CV/EvalAI](https://badges.gitter.im/Cloud-CV/EvalAI.svg)](https://gitter.im/Cloud-CV/EvalAI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/Cloud-CV/EvalAI.svg?branch=master)](https://travis-ci.org/Cloud-CV/EvalAI)
